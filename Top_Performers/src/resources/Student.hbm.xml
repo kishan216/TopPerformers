@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 21, 2016 11:40:18 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.training.entity.Student" table="STUDENT">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
+        </property>
+        <property name="marks" type="double">
+            <column name="MARKS" />
+        </property>
+        <property name="papers" type="int">
+            <column name="PAPERS" />
+        </property>
+        <property name="sports" type="int">
+            <column name="SPORTS" />
+        </property>
+        <property name="cultural" type="int">
+            <column name="CULTURAL" />
+        </property>
+        <property name="grade" type="double">
+            <column name="GRADE" />
+        </property>
+        <many-to-one name="dept" class="com.training.entity.Department" unique="true" cascade="all" lazy="false">
+            <column name="DEPTID" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>
